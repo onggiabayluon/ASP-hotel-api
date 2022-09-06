@@ -1,0 +1,16 @@
+D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\QLHTDAL\bin\Debug\netcoreapp3.1\QLHT.DAL.deps.json
+D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\QLHTDAL\bin\Debug\netcoreapp3.1\QLHT.DAL.runtimeconfig.json
+D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\QLHTDAL\bin\Debug\netcoreapp3.1\QLHT.DAL.runtimeconfig.dev.json
+D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\QLHTDAL\bin\Debug\netcoreapp3.1\QLHT.DAL.dll
+D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\QLHTDAL\bin\Debug\netcoreapp3.1\QLHT.DAL.pdb
+D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\QLHTDAL\bin\Debug\netcoreapp3.1\QLHT.Common.dll
+D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\QLHTDAL\bin\Debug\netcoreapp3.1\QLHT.Common.pdb
+D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\QLHTDAL\obj\Debug\netcoreapp3.1\QLHT.DAL.csproj.AssemblyReference.cache
+D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\QLHTDAL\obj\Debug\netcoreapp3.1\QLHT.DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\QLHTDAL\obj\Debug\netcoreapp3.1\QLHT.DAL.AssemblyInfoInputs.cache
+D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\QLHTDAL\obj\Debug\netcoreapp3.1\QLHT.DAL.AssemblyInfo.cs
+D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\QLHTDAL\obj\Debug\netcoreapp3.1\QLHT.DAL.csproj.CoreCompileInputs.cache
+D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\QLHTDAL\obj\Debug\netcoreapp3.1\QLHT.DAL.csproj.CopyComplete
+D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\QLHTDAL\obj\Debug\netcoreapp3.1\QLHT.DAL.dll
+D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\QLHTDAL\obj\Debug\netcoreapp3.1\QLHT.DAL.pdb
+D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\QLHTDAL\obj\Debug\netcoreapp3.1\QLHT.DAL.genruntimeconfig.cache

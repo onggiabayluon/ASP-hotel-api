@@ -5,5 +5,10 @@
     <RootNamespace>Hotel_api</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\QLHT.BLL\QLHT.BLL.csproj" />
+    <ProjectReference Include="..\QLHT.Common\QLHT.Common.csproj" />
+  </ItemGroup>
+
 
 </Project>
