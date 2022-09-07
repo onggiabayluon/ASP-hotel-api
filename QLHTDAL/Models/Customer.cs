@@ -9,23 +9,21 @@ namespace QLHT.DAL.Models
     {
         public Customer()
         {
-            CustomerCustomerDemos = new HashSet<CustomerCustomerDemo>();
-            Orders = new HashSet<Order>();
+            CustomerRegistrations = new HashSet<CustomerRegistration>();
+            CustomerReservations = new HashSet<CustomerReservation>();
+            Receipts = new HashSet<Receipt>();
         }
 
-        public string CustomerId { get; set; }
-        public string CompanyName { get; set; }
-        public string ContactName { get; set; }
-        public string ContactTitle { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public decimal? Phone { get; set; }
+        public string IdCard { get; set; }
         public string Address { get; set; }
-        public string City { get; set; }
-        public string Region { get; set; }
-        public string PostalCode { get; set; }
-        public string Country { get; set; }
-        public string Phone { get; set; }
-        public string Fax { get; set; }
+        public int? TypeId { get; set; }
 
-        public virtual ICollection<CustomerCustomerDemo> CustomerCustomerDemos { get; set; }
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual CustomerType Type { get; set; }
+        public virtual ICollection<CustomerRegistration> CustomerRegistrations { get; set; }
+        public virtual ICollection<CustomerReservation> CustomerReservations { get; set; }
+        public virtual ICollection<Receipt> Receipts { get; set; }
     }
 }

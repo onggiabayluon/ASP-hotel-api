@@ -8,3 +8,6 @@ D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\QLHT.Common\obj\Debug\net
 D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\QLHT.Common\obj\Debug\netcoreapp3.1\QLHT.Common.csproj.CoreCompileInputs.cache
 D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\QLHT.Common\obj\Debug\netcoreapp3.1\QLHT.Common.dll
 D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\QLHT.Common\obj\Debug\netcoreapp3.1\QLHT.Common.pdb
+D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\QLHT.Common\bin\Debug\netcoreapp3.1\QLHT.Common.runtimeconfig.json
+D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\QLHT.Common\bin\Debug\netcoreapp3.1\QLHT.Common.runtimeconfig.dev.json
+D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\QLHT.Common\obj\Debug\netcoreapp3.1\QLHT.Common.genruntimeconfig.cache

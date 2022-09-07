@@ -4,24 +4,24 @@ SET DATEFORMAT ymd
 ---- Table structure for table `customer_type` 
 ----
 
-CREATE TABLE [customer_type] ([id] INT IDENTITY(1,1)  ,[name] VARCHAR(50) NOT NULL  ,CONSTRAINT [customer_type_customer_type_PRIMARY]  PRIMARY KEY  NONCLUSTERED  ([id])); 
+CREATE TABLE [customer_type] ([id] INT IDENTITY(1,1)  ,[name] VARCHAR(38) NOT NULL  ,CONSTRAINT [customer_type_customer_type_PRIMARY]  PRIMARY KEY  NONCLUSTERED  ([id])); 
 
 ---- Table structure for table `customer` 
 ----
 
-CREATE TABLE [customer] ([id] INT IDENTITY(1,1)  ,[name] VARCHAR(50) NOT NULL  ,[phone] DECIMAL(50,0) NULL  ,[idCard] VARCHAR(50) NULL  ,[address] VARCHAR(255) NULL  ,[type_id] INT NULL  ,CONSTRAINT [customer_customer_PRIMARY]  PRIMARY KEY  NONCLUSTERED  ([id]), CONSTRAINT [customer_customer_ibfk_1] FOREIGN KEY ("type_id") REFERENCES "customer_type" ( "id" ) ON UPDATE NO ACTION ON DELETE NO ACTION); 
+CREATE TABLE [customer] ([id] INT IDENTITY(1,1)  ,[name] VARCHAR(38) NOT NULL  ,[phone] DECIMAL(38,0) NULL  ,[idCard] VARCHAR(38) NULL  ,[address] VARCHAR(255) NULL  ,[type_id] INT NULL  ,CONSTRAINT [customer_customer_PRIMARY]  PRIMARY KEY  NONCLUSTERED  ([id]), CONSTRAINT [customer_customer_ibfk_1] FOREIGN KEY ("type_id") REFERENCES "customer_type" ( "id" ) ON UPDATE NO ACTION ON DELETE NO ACTION); 
  CREATE  NONCLUSTERED  INDEX [customer_type_id] ON [customer] ([type_id]);
 ALTER TABLE [customer] CHECK CONSTRAINT [customer_customer_ibfk_1];
 
 ---- Table structure for table `room_type` 
 ----
 
-CREATE TABLE [room_type] ([id] INT IDENTITY(1,1)  ,[name] VARCHAR(50) NOT NULL  ,CONSTRAINT [room_type_room_type_PRIMARY]  PRIMARY KEY  NONCLUSTERED  ([id])); 
+CREATE TABLE [room_type] ([id] INT IDENTITY(1,1)  ,[name] VARCHAR(38) NOT NULL  ,CONSTRAINT [room_type_room_type_PRIMARY]  PRIMARY KEY  NONCLUSTERED  ([id])); 
 
 ---- Table structure for table `room` 
 ----
 
-CREATE TABLE [room] ([id] INT IDENTITY(1,1)  ,[name] VARCHAR(50) NOT NULL  ,[description] VARCHAR(255) NULL  ,[price] REAL NULL  ,[image] VARCHAR(255) NULL  ,[active] SMALLINT NULL  ,[quantity] INT NULL  ,[category_id] INT NOT NULL  ,CONSTRAINT [room_room_PRIMARY]  PRIMARY KEY  NONCLUSTERED  ([id]), CONSTRAINT [room_room_ibfk_1] FOREIGN KEY ("category_id") REFERENCES "room_type" ( "id" ) ON UPDATE NO ACTION ON DELETE NO ACTION); 
+CREATE TABLE [room] ([id] INT IDENTITY(1,1)  ,[name] VARCHAR(38) NOT NULL  ,[description] VARCHAR(255) NULL  ,[price] REAL NULL  ,[image] VARCHAR(255) NULL  ,[active] SMALLINT NULL  ,[quantity] INT NULL  ,[category_id] INT NOT NULL  ,CONSTRAINT [room_room_PRIMARY]  PRIMARY KEY  NONCLUSTERED  ([id]), CONSTRAINT [room_room_ibfk_1] FOREIGN KEY ("category_id") REFERENCES "room_type" ( "id" ) ON UPDATE NO ACTION ON DELETE NO ACTION); 
  CREATE  NONCLUSTERED  INDEX [room_category_id] ON [room] ([category_id]);
 ALTER TABLE [room] NOCHECK CONSTRAINT [room_room_ibfk_1];
 
@@ -35,7 +35,7 @@ ALTER TABLE [registration] NOCHECK CONSTRAINT [registration_registration_ibfk_1]
 ---- Table structure for table `reservation` 
 ----
 
-CREATE TABLE [reservation] ([id] INT IDENTITY(1,1)  ,[reserveBy] VARCHAR(50) NOT NULL  ,[phone] VARCHAR(50) NULL  ,[checkInTime] DATETIME NULL  ,[checkOutTime] DATETIME NULL  ,[room_id] INT NOT NULL  ,CONSTRAINT [reservation_reservation_PRIMARY]  PRIMARY KEY  NONCLUSTERED  ([id]), CONSTRAINT [reservation_reservation_ibfk_1] FOREIGN KEY ("room_id") REFERENCES "room" ( "id" ) ON UPDATE NO ACTION ON DELETE NO ACTION); 
+CREATE TABLE [reservation] ([id] INT IDENTITY(1,1)  ,[reserveBy] VARCHAR(38) NOT NULL  ,[phone] VARCHAR(38) NULL  ,[checkInTime] DATETIME NULL  ,[checkOutTime] DATETIME NULL  ,[room_id] INT NOT NULL  ,CONSTRAINT [reservation_reservation_PRIMARY]  PRIMARY KEY  NONCLUSTERED  ([id]), CONSTRAINT [reservation_reservation_ibfk_1] FOREIGN KEY ("room_id") REFERENCES "room" ( "id" ) ON UPDATE NO ACTION ON DELETE NO ACTION); 
  CREATE  NONCLUSTERED  INDEX [reservation_room_id] ON [reservation] ([room_id]);
 ALTER TABLE [reservation] NOCHECK CONSTRAINT [reservation_reservation_ibfk_1];
 
@@ -85,7 +85,7 @@ ALTER TABLE [receipt_surcharge] NOCHECK CONSTRAINT [receipt_surcharge_receipt_su
 ---- Table structure for table `user` 
 ----
 
-CREATE TABLE [user] ([id] INT IDENTITY(1,1)  ,[name] VARCHAR(50) NOT NULL  ,[username] VARCHAR(50) NOT NULL  ,[password] VARCHAR(50) NOT NULL  ,[email] VARCHAR(50) NULL  ,[active] SMALLINT NULL  ,[joined_date] DATETIME NULL  ,[user_role] NVARCHAR(4000) NULL  ,CONSTRAINT [user_user_PRIMARY]  PRIMARY KEY  NONCLUSTERED  ([id])); 
+CREATE TABLE [user] ([id] INT IDENTITY(1,1)  ,[name] VARCHAR(38) NOT NULL  ,[username] VARCHAR(38) NOT NULL  ,[password] VARCHAR(38) NOT NULL  ,[email] VARCHAR(38) NULL  ,[active] SMALLINT NULL  ,[joined_date] DATETIME NULL  ,[user_role] NVARCHAR(4000) NULL  ,CONSTRAINT [user_user_PRIMARY]  PRIMARY KEY  NONCLUSTERED  ([id])); 
  CREATE  UNIQUE  NONCLUSTERED  INDEX [user_username] ON [user] ([username]);
 
 ---- Dumping data for table `customer_type`
@@ -121,7 +121,7 @@ INSERT INTO [room_type] ([id],[name])( select 1,N'Phòng đơn') union all ( sel
  SET IDENTITY_INSERT [room] ON 
  GO
 
-INSERT INTO [room] ([id],[name],[description],[price],[image],[active],[quantity],[category_id])( select 1,N'Deluxe giường đơn',N'Wifi miễn phí\n1 giường nhỏ\nDiện tích phòng: 32 m²\nHướng phòng: Thành phố\nPhòng tắm vòi sen & bồn tắm',400000,N'images/p1.png',1,2,1) union all ( select 2,N'Phòng hai giường thường',N'Wifi miễn phí\n1 giường lớn,1 giường nhỏ\nDiện tích phòng: 32 m²\nHướng phòng: Thành phố\nPhòng tắm vòi sen & bồn tắm',700000,N'images/p2.png',1,4,2) union all ( select 3,N'Phòng ba giường thường',N'Wifi miễn phí\n1 giường lớn, 2 giường nhỏ\nDiện tích phòng: 50 m²\nHướng phòng: Thành phố\nPhòng tắm vòi sen & bồn tắm',1000000,N'images/p3.png',1,6,3) union all ( select 4,N'Phòng gia đình thường',N'Wifi miễn phí\n2 giường lớn, 1 giường nhỏ\nDiện tích phòng: 60 m²\nHướng phòng: Thành phố\nPhòng tắm vòi sen & bồn tắm',1200000,N'images/p4.png',1,6,4) union all ( select 5,N'Homestay',N'Wifi miễn phí\n2 phòng lớn, 2 phòng nhỏ\nDiện tích nhà: 100 m²\nHướng phòng: Thành phố\nPhòng tắm vòi sen & bồn tắm',3000000,N'images/p5.png',1,8,5) union all ( select 6,N'phong mot giuong vip',N'Wifi miễn phí\n1 giường nhỏ\nDiện tích phòng: 32 m²\nHướng phòng: Thành phố\nPhòng tắm vòi sen & bồn tắm',1000000,N'images/p1.png',1,1,1)
+INSERT INTO [room] ([id],[name],[description],[price],[image],[active],[quantity],[category_id])( select 1,N'Deluxe giường đơn',N'Wifi miễn phí\n1 giường nhỏ\nDiện tích phòng: 32 m²\nHướng phòng: Thành phố\nPhòng tắm vòi sen & bồn tắm',400000,N'images/p1.png',1,2,1) union all ( select 2,N'Phòng hai giường thường',N'Wifi miễn phí\n1 giường lớn,1 giường nhỏ\nDiện tích phòng: 32 m²\nHướng phòng: Thành phố\nPhòng tắm vòi sen & bồn tắm',700000,N'images/p2.png',1,4,2) union all ( select 3,N'Phòng ba giường thường',N'Wifi miễn phí\n1 giường lớn, 2 giường nhỏ\nDiện tích phòng: 38 m²\nHướng phòng: Thành phố\nPhòng tắm vòi sen & bồn tắm',1000000,N'images/p3.png',1,6,3) union all ( select 4,N'Phòng gia đình thường',N'Wifi miễn phí\n2 giường lớn, 1 giường nhỏ\nDiện tích phòng: 60 m²\nHướng phòng: Thành phố\nPhòng tắm vòi sen & bồn tắm',1200000,N'images/p4.png',1,6,4) union all ( select 5,N'Homestay',N'Wifi miễn phí\n2 phòng lớn, 2 phòng nhỏ\nDiện tích nhà: 100 m²\nHướng phòng: Thành phố\nPhòng tắm vòi sen & bồn tắm',3000000,N'images/p5.png',1,8,5) union all ( select 6,N'phong mot giuong vip',N'Wifi miễn phí\n1 giường nhỏ\nDiện tích phòng: 32 m²\nHướng phòng: Thành phố\nPhòng tắm vòi sen & bồn tắm',1000000,N'images/p1.png',1,1,1)
 
  SET IDENTITY_INSERT [room] OFF 
  GO

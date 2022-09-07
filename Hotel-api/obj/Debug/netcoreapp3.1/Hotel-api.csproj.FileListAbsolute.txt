@@ -66,3 +66,10 @@ D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\Hotel-api\obj\Debug\netco
 D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\Hotel-api\obj\Debug\netcoreapp3.1\Hotel-api.dll
 D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\Hotel-api\obj\Debug\netcoreapp3.1\Hotel-api.pdb
 D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\Hotel-api\obj\Debug\netcoreapp3.1\Hotel-api.genruntimeconfig.cache
+D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\Hotel-api\obj\Debug\netcoreapp3.1\Hotel-api.MvcApplicationPartsAssemblyInfo.cs
+D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\Hotel-api\bin\Debug\netcoreapp3.1\Humanizer.dll
+D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\Hotel-api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\Hotel-api\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\Hotel-api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\Hotel-api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\010_work\Personal\Website\C#\Projects\ASP-hotel-api\Hotel-api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
