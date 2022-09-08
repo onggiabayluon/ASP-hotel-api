@@ -37,8 +37,8 @@ namespace Hotel_api
                 TermsOfService = new Uri("http://appointvn.com"),
                 Contact = new OpenApiContact
                 {
-                    Name = "Trang Nguyen",
-                    Email = "phuongtrang06@gmail.com"
+                    Name = "Nguyên",
+                    Email = "hanguyen20501@gmail.com"
                 },
                 License = new OpenApiLicense
                 {
@@ -54,8 +54,8 @@ namespace Hotel_api
                 TermsOfService = new Uri("http://appointvn.com"),
                 Contact = new OpenApiContact
                 {
-                    Name = "Trang Nguyen",
-                    Email = "phuongtrang06@gmail.com"
+                    Name = "Nguyên",
+                    Email = "hanguyen20501@gmail.com"
                 },
                 License = new OpenApiLicense
                 {
