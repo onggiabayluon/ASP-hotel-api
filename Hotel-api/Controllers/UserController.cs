@@ -38,10 +38,10 @@ namespace Hotel_api.Controllers
         }
 
         [HttpPut("update-user")]
-        public IActionResult UpdateUser([FromBody] User user)
+        public IActionResult UpdateUser([FromBody] UserReq userReq)
         {
             var res = new SingleRsp();
-            res = userSvc.Update(user);
+            res = userSvc.UpdateUser(userReq);
             return Ok(res);
         }
 

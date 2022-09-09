@@ -32,23 +32,24 @@ namespace QLHT.BLL
             user.Username = userReq.Username;
             user.Password = userReq.Password;
             user.UserRole = userReq.UserRole;
-            user.Active = (short)(userReq.Active);
-            user.JoinedDate = new DateTime();
+            //user.Active = (short)(userReq.Active);
+            //user.JoinedDate = new DateTime();
             user.Email = userReq.Email;
             res = userRep.CreateUser(user);
             return res;
         }
 
-        public SingleRsp UpdateProduct(UserReq userReq)
+        public SingleRsp UpdateUser(UserReq userReq)
         {
             var res = new SingleRsp();
             User user = new User();
+            user.Id = userReq.Id;
             user.Name = userReq.Name;
             user.Username = userReq.Username;
             user.Password = userReq.Password;
             user.UserRole = userReq.UserRole;
-            user.Active = (short)(userReq.Active);
-            user.JoinedDate = new DateTime();
+            //user.Active = (short)(userReq.Active);
+            //user.JoinedDate = new DateTime();
             user.Email = userReq.Email;
             res = userRep.UpdateUser(user);
             return res;

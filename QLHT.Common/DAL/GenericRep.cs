@@ -112,7 +112,7 @@ namespace QLHT.Common.DAL
         protected object Update(T old, T @new)
         {
             _context.Entry(old).State = EntityState.Modified;
-            var res = _context.Set<T>().Add(@new);
+            var res = _context.Set<T>().Update(@new);
             return res;
         }
 

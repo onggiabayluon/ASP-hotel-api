@@ -23,7 +23,6 @@ namespace QLHT.DAL
         }
         
 
-
         public int Remove(int id)
         {
             var m = base.All.First(i => i.Id == id);
