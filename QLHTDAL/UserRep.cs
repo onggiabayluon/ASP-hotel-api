@@ -34,7 +34,7 @@ namespace QLHT.DAL
 
         #region -- Methods --
 
-        public SingleRsp CreatUser(User user)
+        public SingleRsp CreateUser(User user)
         {
             var res = new SingleRsp();
             using (var context = new hotelappSQLContext())
