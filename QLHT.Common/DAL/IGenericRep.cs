@@ -54,7 +54,6 @@ namespace QLHT.Common.DAL
         /// </summary>
         /// <param name="l">List model</param>
         void Update(List<T> l);
-
         #endregion
 
         #region -- Properties --
