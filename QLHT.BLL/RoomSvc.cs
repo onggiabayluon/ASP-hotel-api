@@ -53,12 +53,10 @@ namespace QLHT.BLL
         }
 
 
-        public SingleRsp DeleteRoom(RoomReq roomReq)
+        public SingleRsp DeleteRoom(int id)
         {
             var res = new SingleRsp();
-            Room room = new Room();
-            room.Id = roomReq.Id;
-            res = roomRep.Remove(room);
+            res = roomRep.Remove(id);
             return res;
         }
     }

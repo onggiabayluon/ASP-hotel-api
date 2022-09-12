@@ -21,7 +21,7 @@ namespace Hotel_api.Controllers
         }
 
         [HttpGet("get-customer-by-id/{id}")]
-        public IActionResult GetCustomerById(int id)
+        public IActionResult GetCustomerById([FromRoute] int id)
         {
             var res = new SingleRsp();
             res = customerSvc.Read(id);
@@ -49,7 +49,7 @@ namespace Hotel_api.Controllers
         }
 
         [HttpDelete("delete/{id}")]
-        public IActionResult Delete(int id)
+        public IActionResult Delete([FromRoute] int id)
         {
             var res = new SingleRsp();
             res = customerSvc.DeleteCustomer(id);

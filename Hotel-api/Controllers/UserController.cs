@@ -21,7 +21,7 @@ namespace Hotel_api.Controllers
             userSvc = new UserSvc();
         }
 
-        [HttpPost("get-user-by-id")]
+        [HttpGet("get-user-by-id")]
         public IActionResult GetUserById([FromBody] SimpleReq simpleReq)
         {
             var res = new SingleRsp();

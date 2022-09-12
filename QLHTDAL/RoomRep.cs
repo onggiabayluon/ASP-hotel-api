@@ -20,7 +20,7 @@ namespace QLHT.DAL
             return room;
         }
 
-        public SingleRsp Remove(Room room)
+        public SingleRsp Remove(int id)
         {
             var res = new SingleRsp();
             using (var context = new hotelappSQLContext())
@@ -29,7 +29,7 @@ namespace QLHT.DAL
 
                 try
                 {
-                    var p = context.Rooms.Remove(room);
+                    var p = context.Rooms.Remove(Read(id));
                     context.SaveChanges();
                     tran.Commit();
                 }

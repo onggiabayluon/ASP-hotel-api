@@ -20,11 +20,11 @@ namespace Hotel_api.Controllers
             roomSvc = new RoomSvc();
         }
 
-        [HttpPost("get-by-id")]
-        public IActionResult GetRoomById([FromBody] SimpleReq req)
+        [HttpGet("get-by-id/{id}")]
+        public IActionResult GetRoomById([FromRoute] int id)
         {
             var res = new SingleRsp();
-            res = roomSvc.Read(req.Id);
+            res = roomSvc.Read(id);
             return Ok(res);
         }
 
@@ -45,10 +45,10 @@ namespace Hotel_api.Controllers
             return Ok(res);
         }
 
-        [HttpDelete("delete-room")]
-        public IActionResult DeleteRoom([FromBody] RoomReq reqRoom)
+        [HttpDelete("delete-room/{id}")]
+        public IActionResult DeleteRoom([FromRoute] int id)
         {
-            var res = roomSvc.DeleteRoom(reqRoom);
+            var res = roomSvc.DeleteRoom(id);
             return Ok(res);
         }
     }
