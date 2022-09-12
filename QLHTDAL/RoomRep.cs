@@ -20,11 +20,26 @@ namespace QLHT.DAL
             return room;
         }
 
-        public int Remove(int id)
+        public SingleRsp Remove(Room room)
         {
-            var room = base.All.First(i => i.Id == id);
-            room = base.Delete(room);
-            return room.Id;
+            var res = new SingleRsp();
+            using (var context = new hotelappSQLContext())
+            {
+                using var tran = context.Database.BeginTransaction();
+
+                try
+                {
+                    var p = context.Rooms.Remove(room);
+                    context.SaveChanges();
+                    tran.Commit();
+                }
+                catch (Exception ex)
+                {
+                    tran.Rollback();
+                    res.SetError(ex.StackTrace);
+                }
+            }
+            return res;
         }
 
         public SingleRsp CreateRoom(Room room)

@@ -38,10 +38,17 @@ namespace Hotel_api.Controllers
             return Ok(res);
         }
 
-        [HttpPost("update-room")]
+        [HttpPatch("update-room")]
         public IActionResult UpdateRoom([FromBody] RoomReq reqRoom)
         {
             var res = roomSvc.UpdateRoom(reqRoom);
+            return Ok(res);
+        }
+
+        [HttpDelete("delete-room")]
+        public IActionResult DeleteRoom([FromBody] RoomReq reqRoom)
+        {
+            var res = roomSvc.DeleteRoom(reqRoom);
             return Ok(res);
         }
     }
