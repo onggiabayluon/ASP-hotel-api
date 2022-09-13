@@ -21,11 +21,11 @@ namespace Hotel_api.Controllers
             userSvc = new UserSvc();
         }
 
-        [HttpGet("get-user-by-id")]
-        public IActionResult GetUserById([FromBody] SimpleReq simpleReq)
+        [HttpGet("get-user-by-id/{id}")]
+        public IActionResult GetUserById([FromRoute] int id)
         {
             var res = new SingleRsp();
-            res = userSvc.Read(simpleReq.Id);
+            res = userSvc.Read(id);
             return Ok(res);
         }
 
@@ -42,6 +42,14 @@ namespace Hotel_api.Controllers
         {
             var res = new SingleRsp();
             res = userSvc.UpdateUser(userReq);
+            return Ok(res);
+        }
+
+
+        [HttpDelete("delete-user/{id}")]
+        public IActionResult DeleteRoom([FromRoute] int id)
+        {
+            var res = userSvc.DeleteUser(id);
             return Ok(res);
         }
 

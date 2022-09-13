@@ -77,8 +77,28 @@ namespace QLHT.DAL
             }
             return res;
         }
+        public SingleRsp RemoveUser(int id)
+        {
+            var res = new SingleRsp();
+            using (var context = new hotelappSQLContext())
+            {
+                using var tran = context.Database.BeginTransaction();
 
-        
+                try
+                {
+                    var p = context.Users.Remove(Read(id));
+                    context.SaveChanges();
+                    tran.Commit();
+                }
+                catch (Exception ex)
+                {
+                    tran.Rollback();
+                    res.SetError(ex.StackTrace);
+                }
+            }
+            return res;
+        }
+
         #endregion
     }
 }

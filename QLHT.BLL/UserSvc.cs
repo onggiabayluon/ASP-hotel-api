@@ -73,5 +73,12 @@ namespace QLHT.BLL
             return res;
         }
 
+        public SingleRsp DeleteUser(int id)
+        {
+            var res = new SingleRsp();
+            res = userRep.RemoveUser(id);
+            return res;
+        }
+
     }
 }
