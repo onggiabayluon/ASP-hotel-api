@@ -15,11 +15,12 @@ namespace QLHT.DAL
 
         }
 
-        public Customer List()
+        public MultipleRsp List()
         {
+            var res = new MultipleRsp();
             var p = All.Select(r => r);
 
-            return (Customer)p;
+            return res;
         }
 
         public override Customer Read(int id)

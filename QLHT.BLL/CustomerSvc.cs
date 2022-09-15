@@ -18,7 +18,12 @@ namespace QLHT.BLL
             customerRep = new CustomerRep();
         }
 
-       
+        public MultipleRsp List()
+        {
+            var res = new MultipleRsp();
+            //res.Data = _rep.List();
+            return res;
+        }
 
         public override SingleRsp Read(int id)
         {

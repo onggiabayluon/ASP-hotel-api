@@ -37,6 +37,7 @@ namespace Hotel_api.Controllers
             // chứ không cho thêm hết
             var res = new SingleRsp();
             res = registrationRoomSvc.CreateRoom(reReq);
+            
             return Ok(res);
         }
 
