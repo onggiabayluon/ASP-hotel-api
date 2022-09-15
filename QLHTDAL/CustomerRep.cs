@@ -15,6 +15,13 @@ namespace QLHT.DAL
 
         }
 
+        public Customer List()
+        {
+            var p = All.Select(r => r);
+
+            return (Customer)p;
+        }
+
         public override Customer Read(int id)
         {
             var res = All.FirstOrDefault(r => r.Id == id);
