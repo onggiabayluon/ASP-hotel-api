@@ -18,6 +18,8 @@ namespace QLHT.BLL
             customerRep = new CustomerRep();
         }
 
+       
+
         public override SingleRsp Read(int id)
         {
             var res = new SingleRsp();
@@ -32,6 +34,7 @@ namespace QLHT.BLL
             Customer cus = new Customer();
             cus.Address = customerReq.Address;
             cus.Name = customerReq.Name;
+            cus.Password = customerReq.Password;
             cus.IdCard = customerReq.IdCard;
             //cus.Phone = customerReq.Phone;
             cus.TypeId = customerReq.TypeId;
@@ -46,6 +49,7 @@ namespace QLHT.BLL
             cus.Address = customerReq.Address;
             cus.Name = customerReq.Name;
             cus.IdCard = customerReq.IdCard;
+            cus.Password = customerReq.Password;
             //cus.Phone = customerReq.Phone;
             cus.TypeId = customerReq.TypeId;
             res = customerRep.UpdateCustomer(cus);
