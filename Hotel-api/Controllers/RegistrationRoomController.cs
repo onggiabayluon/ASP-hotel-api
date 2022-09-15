@@ -40,7 +40,7 @@ namespace Hotel_api.Controllers
             return Ok(res);
         }
 
-        [HttpPatch("update-room")]
+        [HttpPatch("update-registration")]
         public IActionResult UpdateRoom([FromBody] RegistrationReq reReq)
         {
             var res = registrationRoomSvc.UpdateRoom(reReq);
